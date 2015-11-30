@@ -6,11 +6,9 @@
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 20:07:52 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 20:07:55 by chray            ###   ########.fr       */
+/*   Updated: 2015/11/30 20:44:38 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
@@ -21,7 +19,6 @@ void	ft_putnbr_fd(int n)
 		ft_putchar_fd('-');
 		n = n * -1;
 	}
-
 	if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10);
