@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 10:55:02 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 10:55:03 by chray            ###   ########.fr       */
+/*   Created: 2015/11/25 16:40:03 by chray             #+#    #+#             */
+/*   Updated: 2015/11/25 16:40:06 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_putchar(char c)
 {
-	char	*mem;
-	size_t	index;
-
-	mem = malloc(sizeof(size));
-	if (mem == NULL)
-		return (NULL);
-	while (index < size)
-	{
-		mem[index] = 0;
-		index++;
-	}
-	return (mem);
+	write (1, &c, 1);
 }

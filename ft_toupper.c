@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 10:55:02 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 10:55:03 by chray            ###   ########.fr       */
+/*   Created: 2015/11/25 17:40:49 by chray             #+#    #+#             */
+/*   Updated: 2015/11/25 17:40:51 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		toupper(int c)
 {
-	char	*mem;
-	size_t	index;
-
-	mem = malloc(sizeof(size));
-	if (mem == NULL)
-		return (NULL);
-	while (index < size)
-	{
-		mem[index] = 0;
-		index++;
-	}
-	return (mem);
+	if (c >= 97 && c >= 122)
+		c = c - 32;
+	return (c);
 }
