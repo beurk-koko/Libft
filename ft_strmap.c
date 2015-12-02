@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 10:55:44 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 20:36:11 by chray            ###   ########.fr       */
+/*   Created: 2015/11/30 11:05:49 by chray             #+#    #+#             */
+/*   Updated: 2015/11/30 11:06:03 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	free(ap);
-	*ap = NULL;
+	 char	*cpy;
+	 size_t	index;
+
+	 cpy = (char*)malloc(sizeof(*s) * (ft_strlen(s)));
+	 while (cpy[index])
+	 {
+	 	f(cpy[index]);
+	 	index++;
+	 }
+	 return (cpy);
 }

@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 10:55:44 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 20:36:11 by chray            ###   ########.fr       */
+/*   Created: 2015/11/26 15:52:37 by chray             #+#    #+#             */
+/*   Updated: 2015/11/26 15:52:39 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_strrchr(const char *s, int c)
 {
-	free(ap);
-	*ap = NULL;
+	int		index;
+
+	index = 0;
+	while (s[index])
+		index++;
+	while (index >= 0 && c != s[index])
+	{
+		index--;
+		if (c == s[index])
+			return ((char *) &s[index]);
+	}
+
+	return (NULL);
+}
+
+#include <stdio.h>
+int 	main(int ac, char **av)
+{
+	printf("%s\n", ft_strrchr(av[1], 'l'));
+	return (0);
 }

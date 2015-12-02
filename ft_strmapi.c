@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 10:55:44 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 20:36:11 by chray            ###   ########.fr       */
+/*   Created: 2015/11/30 12:27:28 by chray             #+#    #+#             */
+/*   Updated: 2015/11/30 12:27:40 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	free(ap);
-	*ap = NULL;
+	unsigned int	index;
+
+	index = 0;
 }

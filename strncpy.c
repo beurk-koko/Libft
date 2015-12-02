@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   strncpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 10:55:44 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 20:36:11 by chray            ###   ########.fr       */
+/*   Created: 2015/11/24 13:28:53 by chray             #+#    #+#             */
+/*   Updated: 2015/11/24 13:37:20 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*strncpy (char *dst, const char *src, size_t n)
 {
-	free(ap);
-	*ap = NULL;
+	int	cpy;
+	int	paste;
+
+	cpy = 0;
+	paste = 0;
+	if (src[cpy] == '\0')
+		return (NULL);
+	while (n >= 0)
+	{
+		dst[paste] = src[cpy];
+		cpy++;
+		paste++;
+		n--;
+	}
+	return (*dst);
 }
+

@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 10:55:44 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 20:36:11 by chray            ###   ########.fr       */
+/*   Created: 2015/11/30 12:28:33 by chray             #+#    #+#             */
+/*   Updated: 2015/11/30 12:28:38 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_strequ.h"
 
-void	ft_memdel(void **ap)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	free(ap);
-	*ap = NULL;
+	int		index1;
+	int		index2;
+
+	index1 = 0;
+	index2 = 0;
+	if (*s1 == NULL || *s2 == NULL)
+		return (0);
+	while(s1[index1] == s2[index2])
+	{
+		index1++;
+		index2++;
+	}
+	if (s1[index] != s2[index])
+		return (0);
+	return (1);
 }

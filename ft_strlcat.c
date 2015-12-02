@@ -1,18 +1,39 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/30 10:56:55 by chray             #+#    #+#             */
+/*   Updated: 2015/11/30 10:57:03 by chray            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	len;
 	size_t	i;
+	size_t	max;
 
 	i = 0;
-
-}
-
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	//printf("%lu\n", strlcat(av[1], av[2], 2));
-		printf("%d\n", count_char(av[1], 'c'));
-
-	return (0);
+	while (dst[i])
+		i++;
+	max = size - i - 1;
+	len = ft_strlen(src) + i;
+	if(size != 0 && max <= ft_strlen(src))
+	{
+		printf("test\n");
+		dst = ft_strlen(dst) + dst;
+		i = 0;
+		while (i < max)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (len);
 }
