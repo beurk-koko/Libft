@@ -19,7 +19,7 @@ char	*ft_strcat(char *s1, const char *s2)
 
 	index = 0;
 	count = 0;
-	while (s1[count])
+	while (s1 && s1[count])
 		count++;
 	while (s2[index])
 	{

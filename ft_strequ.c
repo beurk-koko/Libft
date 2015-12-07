@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strequ.h"
+#include "libft.h"
 
 int		ft_strequ(char const *s1, char const *s2)
 {
@@ -19,14 +19,14 @@ int		ft_strequ(char const *s1, char const *s2)
 
 	index1 = 0;
 	index2 = 0;
-	if (*s1 == NULL || *s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (0);
 	while(s1[index1] == s2[index2])
 	{
 		index1++;
 		index2++;
 	}
-	if (s1[index] != s2[index])
+	if (s1[index1] != s2[index2])
 		return (0);
 	return (1);
 }

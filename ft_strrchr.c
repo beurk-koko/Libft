@@ -19,19 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	index = 0;
 	while (s[index])
 		index++;
-	while (index >= 0 && c != s[index])
+	while (index > 0 && c != s[index])
 	{
 		index--;
 		if (c == s[index])
 			return ((char *) &s[index]);
 	}
-
 	return (NULL);
-}
-
-#include <stdio.h>
-int 	main(int ac, char **av)
-{
-	printf("%s\n", ft_strrchr(av[1], 'l'));
-	return (0);
 }

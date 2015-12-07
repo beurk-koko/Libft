@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 10:55:30 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 20:34:29 by chray            ###   ########.fr       */
+/*   Created: 2015/12/01 12:07:34 by chray             #+#    #+#             */
+/*   Updated: 2015/12/01 18:00:52 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_atoi(const char *str)
 {
-	size_t		i;
-	char		*s_dst;
-	const char	*s_src;
-	size_t		p;
+	int		i;
+	int		ret;
+	int		neg;
 
-	p = 0;
 	i = 0;
-	if (dst == NULL || src == NULL)
-		return (NULL);
-	s_src = src;
-	s_dst = dst;
-	while (n != 0)
+	ret = 0;
+	neg = 1;
+	if (str[0] == '-')
 	{
-		s_dst[p] = s_src[i];
+		neg = -1;
 		i++;
-		p++;
-		n--;
 	}
-	return (dst);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		if (ret != 0)
+			ret *= 10;
+		ret += str[i] - '0';
+		i++;
+	}
+	if (neg == -1)
+		ret *= neg;	
+	return (ret);
 }

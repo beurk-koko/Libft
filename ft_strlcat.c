@@ -6,7 +6,7 @@
 /*   By: chray <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 10:56:55 by chray             #+#    #+#             */
-/*   Updated: 2015/11/30 10:57:03 by chray            ###   ########.fr       */
+/*   Updated: 2015/12/01 19:19:17 by chray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	len;
 	size_t	i;
-	size_t	max;
+	size_t	j;
+	size_t	k;
+	size_t	len;
 
 	i = 0;
-	while (dst[i])
+	j = 0;
+	while (i < size && dst[i])
 		i++;
-	max = size - i - 1;
-	len = ft_strlen(src) + i;
-	if(size != 0 && max <= ft_strlen(src))
+	while (src[j])
+		j++;
+	len = i + j;
+	k = size - i - 1;
+	if (i != size)
 	{
-		printf("test\n");
-		dst = ft_strlen(dst) + dst;
-		i = 0;
-		while (i < max)
-		{
-			dst[i] = src[i];
-			i++;
-		}
+		j = 0;
+		while (src[j] && j < k)
+			dst[i++] = src[j++];
 		dst[i] = '\0';
 	}
 	return (len);

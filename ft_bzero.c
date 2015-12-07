@@ -10,19 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <libft.h>
 
 void	bzero(void *s, size_t n)
 {
 	size_t	index;
+	char	*str;
 
 	index = 0;
-	if (n == 0)
-		return (NULL);
-	while (index < n)
+	if (n != 0)
 	{
-		s[index] = '\0';
-		index++;
+		str = s;
+		while (index < n)
+		{
+			str[index] = 0;
+			index++;
+		}
 	}
-	return (NULL);
 }

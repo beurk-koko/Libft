@@ -38,9 +38,3 @@ char	*ft_strstr(const char *s1, const char *s2)
 	}
 	return (NULL);
 }
-
-int	main (int ac, char **av)
-{
-	printf("%s\n", ft_strstr(av[1], av[2]));
-	return (0);
-}

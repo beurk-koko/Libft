@@ -18,20 +18,14 @@ char	*ft_strtim(char const *s)
 	int		count;
 	char	*str;
 	
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	count = ft_strlen(s) - 1;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
-	str = (char*)malloc(sizeof(s) * i);
-	i = 0;
-	count = 0;
-	while (s[i])
-	{
-		if (s[i] != ',' || s[i] != '\t' || s[i] != '\n' || s[i] != ' ')
-		{
-			str[count] = s[i];
-			count++;
-		}
-		i++;
-	}
+	while (s[count] == ' ' || s[count] == '\n' || s[count] == '\t')
+		count--;
+	str = ft_strsub(s, i, (count - i + 1));
 	return (str);
 }

@@ -19,9 +19,9 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 
 	index1 = 0;
 	index2 = 0;
-	if (*s1 == NULL || *s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (0);
-	while(s1[index1] == s2[index] && n > 0)
+	while(s1[index1] == s2[index2] && n > 0)
 	{
 		index1++;
 		index2++;

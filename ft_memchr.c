@@ -19,11 +19,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	index = 0;
 	chr = (unsigned char *)s;
-	while (n > index && chr[index])
+	if (n != 0)
 	{
-		if (chr[index] == (unsigned char)c)
-			return (&chr[index]);
-		index++;
+		while (n > index && chr[index])
+		{
+			if (chr[index] == (unsigned char)c)
+				return (&chr[index]);
+			index++;
+		}
 	}
 	return (NULL);
 }

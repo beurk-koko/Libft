@@ -25,10 +25,12 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	cmp1 = (unsigned char*)s1;
 	cmp2 = (unsigned char*)s2;
-	while (index1 <= n)
+	while (index1 < n)
 	{
 		if (cmp1[index1] != cmp2[index2])
 			return (cmp1[index1] - cmp2[index2]);
+		if (cmp1[index1] == '\0' && cmp2[index2] == '\0')
+			return(0);
 		index1++;
 		index2++;
 	}
